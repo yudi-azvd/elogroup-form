@@ -6,9 +6,12 @@ Ainda em desenvolvimento
 ```sh
 git clone https://github.com/yudi-azvd/elogroup-form
 cd elogroup-form
+
+yarn # para instalar as bibliotecas
 yarn start
 # ou com npm
 npm install
+npm run start
 ```
 
 ### Está mais ou menos assim
