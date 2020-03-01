@@ -13,7 +13,7 @@ div.content {
 
 div.content img#logo {
   width: 300px;
-  margin-bottom: 30px;
+  margin-bottom: 36px;
 }
 
 div.content form {
@@ -27,10 +27,15 @@ div.content form {
 div.content form div.control-group {
   display: flex;
   flex-direction: column;
+  
+  margin-bottom: 16px;
 }
 
-div.content form div.control-group {
-  margin-bottom: 10px;
+div.content form div.control-group label {
+  margin-bottom: 4px;
+  font-weight: bold;
+  /* text-transform: uppercase; */
+  color: #363636;
 }
 
 div.content form div.control-group input {
@@ -38,6 +43,12 @@ div.content form div.control-group input {
   padding: 14px;
   border-radius: 4px;
   height: 42px;
+}
+
+div.content form hr {
+  border-top: 1px solid #ddd;
+  margin-top: 3px;
+  margin-bottom: 16px;
 }
 
 div.content form button {
@@ -52,4 +63,32 @@ div.content form button {
 
   background: #F4A329;
   
+}
+
+div.question {
+  display: flex;
+  
+  align-items: center;
+}
+
+div.content form div.yes label,
+div.content form div.no label {
+  margin-bottom: 0px;
+  margin-left: 5px;
+}
+
+div.content form div.yes input ,
+div.content form div.no input {
+  margin-left: 5px;
+}
+
+
+div.yes-or-no {
+  display: flex;
+}
+
+div.yes, div.no {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
