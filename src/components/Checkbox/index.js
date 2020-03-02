@@ -1,8 +1,8 @@
-import React, { memo } from 'react';
+import React from 'react';
 
 import './styles.css';
 
-function Checkbox({label, onChange, checked }) {
+export default function Checkbox({label, onChange, checked }) {
   console.log('CRIEI CHECKBOX')
   return (
     <div className="checkbox-div">
@@ -12,5 +12,3 @@ function Checkbox({label, onChange, checked }) {
   );
 }
 
-// export default memo(Checkbox)
-export default Checkbox
