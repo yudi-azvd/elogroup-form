@@ -20,7 +20,7 @@ npm run start
 
 <div style="margin: 0 auto;">
   <img  src="./.github/elogroup-form-screenshot.png" 
-  width="400px">
+  width="600px">
 </div>
 
 ### A fazer
