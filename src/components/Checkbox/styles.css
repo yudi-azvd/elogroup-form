@@ -1,0 +1,8 @@
+div.checkbox-div {
+  display: flex;
+  align-items: center;
+}
+
+div.checkbox-div input {
+  margin-right: 5px;
+}
