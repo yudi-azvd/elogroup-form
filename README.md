@@ -1,5 +1,7 @@
 # Formulário EloGroup
-Ainda em desenvolvimento
+_Ainda em desenvolvimento._
+
+Esse formulário foi desenvolvido com [React](https://reactjs.org/).
 
 ### Dê uma olhada
 
