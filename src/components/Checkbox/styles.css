@@ -6,3 +6,7 @@ div.checkbox-div {
 div.checkbox-div input {
   margin-right: 5px;
 }
+
+div.checkbox-div label {
+  font-weight: normal !important;
+}

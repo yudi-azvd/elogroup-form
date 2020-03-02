@@ -9,10 +9,12 @@ import logo from './assets/logo.svg'
 import Checkbox from './components/Checkbox'
 
 const socialMediaOptions = ['Facebook',  'Instagram',  'LinkedIn']
+const knowFromOptions = ['TV', 'Internet', 'Amigos', 'Outros']
 
 function App() {
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
+  const [knowFrom, setKnowFrom] = useState({value: ''})
   const [hasSocialMedia, setHasSocialMedia] = useState('yes')
   const [socialMedia, setSocialMedia] = useState(
     socialMediaOptions.reduce((options, option) => ({
@@ -26,6 +28,11 @@ function App() {
 
   function handlePhoneChange(event) {
     setPhone(event.target.value)
+  }
+
+  function handleKnowFromChange(event) {
+    console.log('handleKnowFromChange', event.target.value)
+    setKnowFrom({value: event.target.value})
   }
 
   function handleHasSocialMediaChange(event) {
@@ -56,9 +63,13 @@ function App() {
     const data = {
       name: target.name.value,
       phone: target.phone.value,
-      socialMedia: hasSocialMedia === 'no' 
-        ? [] 
-        : Object.keys(socialMedia).filter(key => socialMedia[key])
+      knowFrom: knowFrom.value,
+    }
+
+    if (hasSocialMedia === 'yes') {
+      data.socialMedia = Object
+        .keys(socialMedia)
+        .filter(key => socialMedia[key])
     }
     
     console.log(data)
@@ -79,12 +90,21 @@ function App() {
           <input id="phone" name="phone" type="text" placeholder="Número de celular" value={phone} onChange={handlePhoneChange} />
         </div>
 
+        <div className="control-group know-from">
+          <label htmlFor="knowFrom">Como nos conheceu?</label>
+          <select selected={knowFrom} name="knowFrom" onChange={handleKnowFromChange}>
+            {knowFromOptions.map(k => (
+              <option key={k} value={k}> {k} </option>
+            ))}
+          </select>
+        </div>
+
         {/* <hr/> */}
         <div className="control-group social-media">
           <div className="question">
             <span className="has-social-media-question">Possui redes sociais?</span>
 
-            <div className="yes-or-no">
+            <div className={`yes-or-no ${hasSocialMedia ? 'has-social-media' : 'has-no-social-media'}`}>
               <div className="yes">
                 <input type="radio" name="hasSocialMedia" value="yes" onChange={handleHasSocialMediaChange} checked={hasSocialMedia === 'yes'} />
                 <label htmlFor="yes">Sim</label>
@@ -95,17 +115,28 @@ function App() {
               </div>
             </div>
           </div>
-
-          { hasSocialMedia === 'yes' ? (
-          <div className="control-group social-media-options">
-            {Object.keys(socialMedia).map(socialMediaName => (
-              <Checkbox key={socialMediaName} label={socialMediaName} onChange={handleSocialMediaChange} checked={socialMedia[socialMediaName]} />
-            ))}
+              
+          <div className={`social-media-options ${hasSocialMedia === 'yes' ? 'show' : 'hide'}`}>
+            { hasSocialMedia === 'yes' ? (
+            <div>
+              {Object.keys(socialMedia).map(socialMediaName => (
+                <Checkbox 
+                  key={socialMediaName} 
+                  label={socialMediaName} 
+                  onChange={handleSocialMediaChange} 
+                  checked={socialMedia[socialMediaName]} 
+                />
+                ))}
+              </div>
+              ) 
+            :
+            <div className="no-social-media">
+              <span>Não tenho redes sociais</span>
+            </div> 
+            }
           </div>
-          ) 
-          : <span id="no-social-media">Não tenho mídias sociais</span>}
             
-          </div>
+        </div>
 
         <button type="submit">ENVIAR</button>
       </form>

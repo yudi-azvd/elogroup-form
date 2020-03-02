@@ -45,6 +45,25 @@ div.content form div.control-group input {
   height: 42px;
 }
 
+div.content form div.know-from select {
+  height: 42px;
+  border-radius: 4px;
+  padding-left: 13px;
+
+  border: 1px solid #ddd;
+  color: #363636;
+  color: -internal-light-dark-color(black, white);
+  background: #fff;
+
+  /* display: inline; */
+}
+
+div.content form div.know-from select option {
+  height: 42px !important;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
 div.content form hr {
   border-top: 1px solid #ddd;
   margin-top: 3px;
@@ -54,15 +73,21 @@ div.content form hr {
 div.content form button {
   margin-top: 10px;
   height: 42px;
-
+  
   font-weight: bold;
   color: #fff;
-
+  
   border: 0;
   border-radius: 4px;
-
-  background: #F4A329;
   
+  background: #F4A329;
+}
+
+div.content form button:hover {
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  background: #f39f20;
+
+  transition: all .2s;
 }
 
 div.question {
@@ -75,13 +100,13 @@ div.content form div.yes label,
 div.content form div.no label {
   margin-bottom: 0px;
   margin-left: 5px;
+  font-weight: normal;
 }
 
 div.content form div.yes input ,
 div.content form div.no input {
   margin-left: 5px;
-}
-
+} 
 
 div.yes-or-no {
   display: flex;
@@ -91,4 +116,19 @@ div.yes, div.no {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+span.has-social-media-question {
+  color: #363636;
+  font-weight: bold;
+}
+
+div.social-media-options {
+  /* color: white; */
+
+  position: relative;
+}
+
+div.no-social-media {
+  color: #363636;
 }
