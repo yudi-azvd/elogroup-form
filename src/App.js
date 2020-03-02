@@ -15,7 +15,7 @@ function App() {
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
   const [knowFrom, setKnowFrom] = useState({value: ''})
-  const [hasSocialMedia, setHasSocialMedia] = useState('yes')
+  const [hasSocialMedia, setHasSocialMedia] = useState('no')
   const [socialMedia, setSocialMedia] = useState(
     socialMediaOptions.reduce((options, option) => ({
     ...options, 
@@ -31,7 +31,6 @@ function App() {
   }
 
   function handleKnowFromChange(event) {
-    console.log('handleKnowFromChange', event.target.value)
     setKnowFrom({value: event.target.value})
   }
 
