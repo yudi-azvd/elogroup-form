@@ -9,6 +9,8 @@ div.content {
 
   background: #fff;
   border-radius: 4px;
+
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 div.content img#logo {
@@ -59,7 +61,7 @@ div.content form div.know-from select {
 }
 
 div.content form div.know-from select option {
-  height: 42px !important;
+  height: 42px ;
   font-size: 14px;
   border-radius: 4px;
 }
@@ -131,4 +133,9 @@ div.social-media-options {
 
 div.no-social-media {
   color: #363636;
+}
+
+div.content form span.validation-error {
+  margin-top: 3px;
+  color: red;
 }

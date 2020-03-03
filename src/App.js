@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import * as Yup from 'yup';
 // import { FaFacebookSquare, FaInstagram, FaLinkedin} from 'react-icons/fa';
 // import {AiFillInstagram} from 'react-icons/ai';
 
@@ -12,6 +13,7 @@ const socialMediaOptions = ['Facebook',  'Instagram',  'LinkedIn']
 const knowFromOptions = ['TV', 'Internet', 'Amigos', 'Outros']
 
 function App() {
+  const [validationErrors, setValidationErrors] = useState({})
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
   const [knowFrom, setKnowFrom] = useState({value: ''})
@@ -21,6 +23,18 @@ function App() {
     ...options, 
     [option]: false
   }), {}))
+
+  const schema = Yup.object().shape({
+    name: Yup
+      .string()
+      .test('first-name-last-name', 'Coloque nome e sobrenome', (value) => {
+        return value.split(' ').length >= 2
+      })
+      .required('O nome é obrigatório'),
+    phone: Yup.string().required('O telefone é obrigatório'),
+    knowFrom: Yup.string().required('Informe por onde você nos conheceu'),
+    socialMedia: Yup.array()
+  })
 
   function handleNameChange(event) {
     setName(event.target.value)
@@ -55,7 +69,7 @@ function App() {
     })
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault()
 
     const { target } = event
@@ -65,13 +79,32 @@ function App() {
       knowFrom: knowFrom.value,
     }
 
+    // Pode vir um array vazio
     if (hasSocialMedia === 'yes') {
       data.socialMedia = Object
         .keys(socialMedia)
         .filter(key => socialMedia[key])
+      
+      // GAMBIARRA
+      if (data.socialMedia.length === 0) {
+        delete data.socialMedia
+      }
+    }
+
+    try {
+      await schema.validate(data, {abortEarly: false})
+      console.log(data)
+    } catch (error) {
+      if (error instanceof Yup.ValidationError) {
+        const errData = error.inner.reduce((errors, err) => ({
+          ...errors,
+          [err.path]: err.message
+        }), {})
+
+        setValidationErrors(errData)
+      }
     }
     
-    console.log(data)
   }
 
   return (
@@ -82,11 +115,13 @@ function App() {
         <div className="control-group">
           <label htmlFor="name">Nome</label>
           <input id="name" name="name" type="text" placeholder="Maria José da Silva" value={name} onChange={handleNameChange} />
+          { validationErrors['name'] && <span className="validation-error"> {validationErrors['name']} </span> }
         </div>
         
         <div className="control-group">
           <label htmlFor="phone">Telefone</label>
           <input id="phone" name="phone" type="text" placeholder="Número de celular" value={phone} onChange={handlePhoneChange} />
+          { validationErrors['phone'] && <span className="validation-error"> {validationErrors['phone']} </span> }
         </div>
 
         <div className="control-group know-from">
@@ -96,6 +131,7 @@ function App() {
               <option key={k} value={k}> {k} </option>
             ))}
           </select>
+          { validationErrors['knowFrom'] && <span className="validation-error"> {validationErrors['knowFrom']} </span> }
         </div>
 
         {/* <hr/> */}
