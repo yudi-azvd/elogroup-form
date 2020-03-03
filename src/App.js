@@ -3,6 +3,8 @@ import * as Yup from 'yup';
 // import { FaFacebookSquare, FaInstagram, FaLinkedin} from 'react-icons/fa';
 // import {AiFillInstagram} from 'react-icons/ai';
 
+import api from './services/api'
+
 import './App.css';
 
 import logo from './assets/logo.svg'
@@ -16,7 +18,7 @@ function App() {
   const [validationErrors, setValidationErrors] = useState({})
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
-  const [knowFrom, setKnowFrom] = useState({value: ''})
+  const [knowFrom, setKnowFrom] = useState({value: 'TV'})
   const [hasSocialMedia, setHasSocialMedia] = useState('no')
   const [socialMedia, setSocialMedia] = useState(
     socialMediaOptions.reduce((options, option) => ({
@@ -49,7 +51,6 @@ function App() {
   }
 
   function handleHasSocialMediaChange(event) {
-    console.log(event.target.value)
     setHasSocialMedia(event.target.value)
 
     if (event.target.value === 'no') {
@@ -61,8 +62,6 @@ function App() {
   }
 
   function handleSocialMediaChange(event) {
-    console.log(event.target.name, event.target.checked)
-    console.log(socialMedia)
     setSocialMedia({
       ...socialMedia,
       [event.target.name]: event.target.checked
@@ -93,6 +92,10 @@ function App() {
 
     try {
       await schema.validate(data, {abortEarly: false})
+
+      await api.post('/', data)
+
+      setValidationErrors({})
       console.log(data)
     } catch (error) {
       if (error instanceof Yup.ValidationError) {
@@ -113,19 +116,19 @@ function App() {
       
       <form onSubmit={handleSubmit}>
         <div className="control-group">
-          <label htmlFor="name">Nome</label>
+          <label htmlFor="name">Nome <span className="mandatory-field">*</span></label>
           <input id="name" name="name" type="text" placeholder="Maria José da Silva" value={name} onChange={handleNameChange} />
           { validationErrors['name'] && <span className="validation-error"> {validationErrors['name']} </span> }
         </div>
         
         <div className="control-group">
-          <label htmlFor="phone">Telefone</label>
+          <label htmlFor="phone">Telefone <span className="mandatory-field">*</span></label>
           <input id="phone" name="phone" type="text" placeholder="Número de celular" value={phone} onChange={handlePhoneChange} />
           { validationErrors['phone'] && <span className="validation-error"> {validationErrors['phone']} </span> }
         </div>
 
         <div className="control-group know-from">
-          <label htmlFor="knowFrom">Como nos conheceu?</label>
+          <label htmlFor="knowFrom">Como nos conheceu? <span className="mandatory-field">*</span> </label>
           <select selected={knowFrom} name="knowFrom" onChange={handleKnowFromChange}>
             {knowFromOptions.map(k => (
               <option key={k} value={k}> {k} </option>
@@ -134,18 +137,17 @@ function App() {
           { validationErrors['knowFrom'] && <span className="validation-error"> {validationErrors['knowFrom']} </span> }
         </div>
 
-        {/* <hr/> */}
         <div className="control-group social-media">
           <div className="question">
             <span className="has-social-media-question">Possui redes sociais?</span>
 
             <div className={`yes-or-no ${hasSocialMedia ? 'has-social-media' : 'has-no-social-media'}`}>
               <div className="yes">
-                <input type="radio" name="hasSocialMedia" value="yes" onChange={handleHasSocialMediaChange} checked={hasSocialMedia === 'yes'} />
+                <input type="radio" id="yes" name="hasSocialMedia" value="yes" onChange={handleHasSocialMediaChange} checked={hasSocialMedia === 'yes'} />
                 <label htmlFor="yes">Sim</label>
               </div>
               <div className="no">
-                <input type="radio" name="hasSocialMedia" value="no" onChange={handleHasSocialMediaChange} checked={hasSocialMedia === 'no'} />
+                <input type="radio" id="no" name="hasSocialMedia" value="no" onChange={handleHasSocialMediaChange} checked={hasSocialMedia === 'no'} />
                 <label htmlFor="no">Não</label>
               </div>
             </div>
@@ -166,7 +168,7 @@ function App() {
               ) 
             :
             <div className="no-social-media">
-              <span>Não tenho redes sociais</span>
+              {/* <span>Não tenho redes sociais</span> */}
             </div> 
             }
           </div>
