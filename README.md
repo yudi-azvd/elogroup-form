@@ -1,7 +1,11 @@
 # Formulário EloGroup
 _Ainda em desenvolvimento._
 
-Esse formulário foi desenvolvido com [React](https://reactjs.org/).
+Esse formulário foi desenvolvido com [React](https://reactjs.org/) para a interface.
+
+Outras bibliotecas usadas:
+* [Yup](https://github.com/jquense/yup#yup) para validação.
+* [Axios](https://github.com/axios/axios#axios) para comunicação com o backend.
 
 ### Dê uma olhada
 
