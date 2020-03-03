@@ -24,8 +24,12 @@ npm run start
 
 <div style="margin: 0 auto;">
   <img  src="./.github/elogroup-form-screenshot.png" 
-  width="600px">
+  width="800px">
 </div>
+
+### Requisição POST
+Para testar a requisição que é enviada pelo formulário, você pode usar o modelo encontrado
+nesse [repositório](https://github.com/yudi-azvd/elogroup-form-backend).
 
 ### A fazer
 
