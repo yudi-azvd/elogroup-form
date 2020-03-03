@@ -140,7 +140,7 @@ function App() {
           <div className="question">
             <span className="has-social-media-question">Possui redes sociais?</span>
 
-            <div className={`yes-or-no ${hasSocialMedia ? 'has-social-media' : 'has-no-social-media'}`}>
+            <div className={`yes-or-no`}>
               <div className="yes">
                 <input type="radio" id="yes" name="hasSocialMedia" value="yes" onChange={handleHasSocialMediaChange} checked={hasSocialMedia === 'yes'} />
                 <label htmlFor="yes">Sim</label>
