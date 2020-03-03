@@ -25,9 +25,6 @@ npm run start
 
 ### A fazer
 
-* Interatividade no botão de enviar (sombra ou mudança de cor)
 * Melhorar aparecimento das redes sociais
-* Validação nos campos (com Yup?)
-* Mensagens de erro
+* Input mask pra telefone (implementar ou usar uma lib? fazer pra nome também?)
 * Melhorar fonte
-* Melhorar "Não tenho redes sociais"
