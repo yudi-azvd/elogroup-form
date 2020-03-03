@@ -91,12 +91,11 @@ function App() {
     }
 
     try {
-      await schema.validate(data, {abortEarly: false})
+      await schema.validate(data, { abortEarly: false })
 
       await api.post('/', data)
 
       setValidationErrors({})
-      console.log(data)
     } catch (error) {
       if (error instanceof Yup.ValidationError) {
         const errData = error.inner.reduce((errors, err) => ({
