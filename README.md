@@ -33,6 +33,7 @@ nesse [repositório](https://github.com/yudi-azvd/elogroup-form-backend).
 
 ### A fazer
 
-* Melhorar aparecimento das redes sociais
-* Estilizar checkbox e radio?
 * Input mask pra telefone (implementar ou usar uma lib? fazer pra nome também?)
+* Estilizar checkbox e radio?
+* Colocar animação Spin no botão enquanto estiver carregando (tranformar em componente)
+* Melhorar aparecimento das redes sociais
