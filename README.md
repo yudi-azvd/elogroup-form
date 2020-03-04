@@ -20,6 +20,9 @@ npm install
 npm run start
 ```
 
+### Ou ainda
+Se, por acaso, a instalação dos pacotes demorar muito, você pode checar o funcionamento [aqui](https://elogroup-form.netlify.com/). O primeiro envio pode demorar até 40 segundos porque o backend está hospedado em um servidor grátis da Heroku.
+
 ### Está mais ou menos assim
 
 <div style="margin: 0 auto;">
