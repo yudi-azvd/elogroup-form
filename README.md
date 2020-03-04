@@ -9,13 +9,12 @@ Outras bibliotecas usadas:
 
 ### Dê uma olhada
 
+Você vai precisar do [Node.js](https://nodejs.org/en/) e [npm](https://www.npmjs.com/get-npm) instalados em seu computador.
+
 ```sh
-git clone https://github.com/yudi-azvd/elogroup-form
+git clone https://github.com/yudi-azvd/elogroup-form # ou baixe clicando no botão verde desse repositório
 cd elogroup-form
 
-yarn # para instalar as bibliotecas
-yarn start
-# ou com npm
 npm install
 npm run start
 ```
