@@ -36,8 +36,8 @@ div.content form div.control-group {
 div.content form div.control-group label {
   margin-bottom: 4px;
   font-weight: bold;
-  /* text-transform: uppercase; */
   color: #363636;
+  cursor: pointer;
 }
 
 div.content form div.control-group input {
@@ -61,10 +61,6 @@ div.content form div.know-from select {
   background: #fff;
 
   position: relative;
-  z-index: 1;
-
-
-  /* display: inline; */
 }
 
 div.content form div.know-from select option {
@@ -148,4 +144,20 @@ div.content form span.validation-error {
 
 div.content form div.control-group span.mandatory-field {
   color: #D8000C;
+}
+
+div.content form button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transition: all .2;
+}
+
+div.content form span.success-message {
+  color: green;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: -10px;
+
+  transition: all 1s;
 }

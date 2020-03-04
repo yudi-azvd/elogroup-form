@@ -3,10 +3,23 @@ div.checkbox-div {
   align-items: center;
 }
 
+
 div.checkbox-div input {
   margin-right: 5px;
 }
 
 div.checkbox-div label {
+  /* opacity: 0.7; */
   font-weight: normal !important;
+  transition: .2s opacity;
+  cursor: pointer;
+}
+
+div.checkbox-div.checked label {
+  opacity: 1;
+}
+
+
+div.checkbox-div label:hover {
+  opacity: 1;
 }

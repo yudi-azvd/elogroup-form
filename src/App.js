@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import * as Yup from 'yup';
-// import { FaFacebookSquare, FaInstagram, FaLinkedin} from 'react-icons/fa';
-// import {AiFillInstagram} from 'react-icons/ai';
 
 import api from './services/api'
 
@@ -25,6 +23,8 @@ function App() {
     ...options, 
     [option]: false
   }), {}))
+  const [enabled, setEnabled] = useState(true)
+  const [successMessage, setSuccessMessage] = useState('')
 
   const schema = Yup.object().shape({
     name: Yup
@@ -68,8 +68,16 @@ function App() {
     })
   }
 
+  function disableButton() {
+    setEnabled(false)
+  }
+
   async function handleSubmit(event) {
     event.preventDefault()
+
+    if (!enabled) {
+      return
+    }
 
     const { target } = event
     const data = {
@@ -95,7 +103,15 @@ function App() {
 
       await api.post('/', data)
 
+      await fetch('http://localhost:8080/', {
+        method: 'POST',
+        body: data
+      })
+
+      disableButton()
       setValidationErrors({})
+      setSuccessMessage('Dados enviados com sucesso!')
+      setTimeout(() => setSuccessMessage(''), 3000)
     } catch (error) {
       if (error instanceof Yup.ValidationError) {
         const errData = error.inner.reduce((errors, err) => ({
@@ -106,7 +122,6 @@ function App() {
         setValidationErrors(errData)
       }
     }
-    
   }
 
   return (
@@ -174,7 +189,8 @@ function App() {
             
         </div>
 
-        <button type="submit">ENVIAR</button>
+        <button type="submit" className={`${!enabled? 'disabled' : ''}`}>ENVIAR</button>
+        {successMessage && <span className="success-message"> {successMessage} </span>}
       </form>
     </div>
   );
