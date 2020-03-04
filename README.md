@@ -34,5 +34,5 @@ nesse [repositório](https://github.com/yudi-azvd/elogroup-form-backend).
 ### A fazer
 
 * Melhorar aparecimento das redes sociais
+* Estilizar checkbox e radio?
 * Input mask pra telefone (implementar ou usar uma lib? fazer pra nome também?)
-* Melhorar espaçamento entre os campos
