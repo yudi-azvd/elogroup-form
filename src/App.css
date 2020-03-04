@@ -152,6 +152,12 @@ div.content form button.disabled {
   transition: all .2;
 }
 
+div.content form button.loading {
+  opacity: 0.5;
+  cursor: progress;
+  transition: all .2;
+}
+
 div.content form span.success-message {
   color: green;
   font-weight: bold;

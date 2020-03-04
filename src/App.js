@@ -24,6 +24,7 @@ function App() {
     [option]: false
   }), {}))
   const [enabled, setEnabled] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [successMessage, setSuccessMessage] = useState('')
 
   const schema = Yup.object().shape({
@@ -99,11 +100,13 @@ function App() {
     }
 
     try {
-      await schema.validate(data, { abortEarly: false })
+      disableButton()
+      setLoading(true)
 
+      await schema.validate(data, { abortEarly: false })
       await api.post('/', data)
 
-      disableButton()
+      setLoading(false)
       setValidationErrors({})
       setSuccessMessage('Dados enviados com sucesso!')
       setTimeout(() => setSuccessMessage(''), 3000)
@@ -184,7 +187,7 @@ function App() {
             
         </div>
 
-        <button type="submit" className={`${!enabled? 'disabled' : ''}`}>ENVIAR</button>
+        <button type="submit" className={`${!enabled? 'disabled' : ''} ${loading? 'loading' : '' } `}>ENVIAR</button>
         {successMessage && <span className="success-message"> {successMessage} </span>}
       </form>
     </div>
