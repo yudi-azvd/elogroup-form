@@ -30,7 +30,7 @@ Se, por acaso, a instalação dos pacotes demorar muito, você pode checar o fun
 </div>
 
 ### Requisição POST
-Para testar a requisição que é enviada pelo formulário, você pode usar o modelo encontrado
+Para testar localmente a requisição que é enviada pelo formulário, você pode usar o modelo encontrado
 nesse [repositório](https://github.com/yudi-azvd/elogroup-form-backend).
 
 ### A fazer
