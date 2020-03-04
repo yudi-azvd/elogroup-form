@@ -103,11 +103,6 @@ function App() {
 
       await api.post('/', data)
 
-      await fetch('http://localhost:8080/', {
-        method: 'POST',
-        body: data
-      })
-
       disableButton()
       setValidationErrors({})
       setSuccessMessage('Dados enviados com sucesso!')
