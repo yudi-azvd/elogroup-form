@@ -7,6 +7,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
+    "cross-env": "^7.0.1",
     "dotenv": "^8.2.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
@@ -14,7 +15,8 @@
     "yup": "^0.28.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cross-env NODE_ENV=production react-scripts start",
+    "dev": "cross-env NODE_ENV=development react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
