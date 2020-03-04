@@ -122,7 +122,7 @@ function App() {
         
         <div className="control-group">
           <label htmlFor="phone">Telefone <span className="mandatory-field">*</span></label>
-          <input id="phone" name="phone" type="text" placeholder="Número de celular" value={phone} onChange={handlePhoneChange} />
+          <input id="phone" name="phone" type="text" placeholder="99 - 99999999" value={phone} onChange={handlePhoneChange} />
           { validationErrors['phone'] && <span className="validation-error"> {validationErrors['phone']} </span> }
         </div>
 
