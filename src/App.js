@@ -9,6 +9,7 @@ import logo from './assets/logo.svg'
 
 import Checkbox from './components/Checkbox'
 import PhoneInput from './components/PhoneInput'
+import SubmitButton from './components/SubmitButton'
 
 const socialMediaOptions = ['Facebook',  'Instagram',  'LinkedIn']
 const knowFromOptions = ['TV', 'Internet', 'Amigos', 'Outros']
@@ -185,11 +186,9 @@ function App() {
             </div> 
             }
           </div>
-            
         </div>
-
-        <button type="submit" className={`${!enabled? 'disabled' : ''} ${loading? 'loading' : '' } `}>ENVIAR</button>
-        {successMessage && <span className="success-message"> {successMessage} </span>}
+        
+        <SubmitButton loading={loading} enabled={enabled} successMessage={successMessage} />
       </form>
     </div>
   );
