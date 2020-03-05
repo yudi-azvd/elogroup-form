@@ -8,6 +8,7 @@ import './App.css';
 import logo from './assets/logo.svg'
 
 import Checkbox from './components/Checkbox'
+import PhoneInput from './components/PhoneInput'
 
 const socialMediaOptions = ['Facebook',  'Instagram',  'LinkedIn']
 const knowFromOptions = ['TV', 'Internet', 'Amigos', 'Outros']
@@ -135,7 +136,7 @@ function App() {
         
         <div className="control-group">
           <label htmlFor="phone">Telefone <span className="mandatory-field">*</span></label>
-          <input id="phone" name="phone" type="text" placeholder="99 - 99999999" value={phone} onChange={handlePhoneChange} />
+          <PhoneInput id="" name="phone" type="text" placeholder="99 - 99999999" value={phone} onChange={handlePhoneChange}/> 
           { validationErrors['phone'] && <span className="validation-error"> {validationErrors['phone']} </span> }
         </div>
 
