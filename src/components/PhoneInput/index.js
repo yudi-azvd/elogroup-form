@@ -1,8 +1,8 @@
 import React from 'react';
 import InputMask from 'react-input-mask'
 
-export default function PhoneInput(props) {
+export default function PhoneInput({ mask, ...rest }) {
   return (
-    <InputMask {...props} mask="99 - 99999999" maskChar=" " />
+    <InputMask {...rest} mask={mask} maskChar="" />
   );
 }

@@ -29,6 +29,8 @@ function App() {
   const [loading, setLoading] = useState(false)
   const [successMessage, setSuccessMessage] = useState('')
 
+  const phoneMask = '99 - 99999999'
+
   const schema = Yup.object().shape({
     name: Yup
       .string()
@@ -36,7 +38,10 @@ function App() {
         return value.split(' ').length >= 2
       })
       .required('O nome é obrigatório'),
-    phone: Yup.string().required('O telefone é obrigatório'),
+    phone: Yup.string().required('O telefone é obrigatório')
+      .test('phone-mask', `Siga a formatação ${phoneMask}`, (value) => 
+          value.length === phoneMask.length
+      ),
     knowFrom: Yup.string().required('Informe por onde você nos conheceu'),
     socialMedia: Yup.array()
   })
@@ -135,7 +140,7 @@ function App() {
         
         <div className="control-group">
           <label htmlFor="phone">Telefone <span className="mandatory-field">*</span></label>
-          <PhoneInput id="" name="phone" type="text" placeholder="99 - 99999999" value={phone} onChange={handlePhoneChange}/> 
+          <PhoneInput id="phone" name="phone" type="tel" placeholder={phoneMask} mask={phoneMask} value={phone} onChange={handlePhoneChange}/> 
           { validationErrors['phone'] && <span className="validation-error"> {validationErrors['phone']} </span> }
         </div>
 
