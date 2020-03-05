@@ -188,7 +188,11 @@ function App() {
           </div>
         </div>
         
-        <SubmitButton loading={loading} enabled={enabled} successMessage={successMessage} />
+        <SubmitButton 
+          loading={loading} 
+          enabled={enabled} 
+          successMessage={successMessage} 
+        />
       </form>
     </div>
   );
