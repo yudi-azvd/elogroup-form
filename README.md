@@ -36,6 +36,6 @@ nesse [repositório](https://github.com/yudi-azvd/elogroup-form-backend).
 ### A fazer
 
 * Refatorar estrutura (colocar páginas?)
-* Estilizar checkbox e radio?
 * Colocar animação Spin no botão enquanto estiver carregando (?)
+* Estilizar checkbox e radio?
 * Melhorar aparecimento das redes sociais
