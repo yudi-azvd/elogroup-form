@@ -171,7 +171,7 @@ function App() {
           </div>
               
           <div className={`social-media-options ${hasSocialMedia === 'yes' ? 'show' : 'hide'}`}>
-            { hasSocialMedia === 'yes' ? (
+            { hasSocialMedia === 'yes' ? 
             <div>
               {Object.keys(socialMedia).map(socialMediaName => (
                 <Checkbox 
@@ -182,7 +182,6 @@ function App() {
                 />
                 ))}
               </div>
-              ) 
             :
             <div className="no-social-media">
               {/* <span>Não tenho redes sociais</span> */}
