@@ -71,10 +71,6 @@ function App() {
     })
   }
 
-  function disableButton() {
-    setButtonEnabled(false)
-  }
-
   async function handleSubmit(event) {
     event.preventDefault()
 
