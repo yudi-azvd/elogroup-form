@@ -18,6 +18,16 @@ div.content img#logo {
   margin-bottom: 36px;
 }
 
+@media only screen and (max-width: 768px) {
+  div.content {
+    max-width: 85%;
+  }
+
+  div.content img#logo {
+    width: 200px;
+  }
+}
+
 div.content form {
   display: flex;
   flex-direction: column;

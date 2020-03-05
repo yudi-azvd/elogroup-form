@@ -25,7 +25,7 @@ function App() {
     ...options, 
     [option]: false
   }), {}))
-  const [enabled, setEnabled] = useState(true)
+  const [buttonEnabled, setButtonEnabled] = useState(true)
   const [loading, setLoading] = useState(false)
   const [successMessage, setSuccessMessage] = useState('')
 
@@ -72,13 +72,13 @@ function App() {
   }
 
   function disableButton() {
-    setEnabled(false)
+    setButtonEnabled(false)
   }
 
   async function handleSubmit(event) {
     event.preventDefault()
 
-    if (!enabled) {
+    if (!buttonEnabled) {
       return
     }
 
@@ -102,7 +102,7 @@ function App() {
     }
 
     try {
-      disableButton()
+      setButtonEnabled(false)
       setLoading(true)
 
       await schema.validate(data, { abortEarly: false })
@@ -119,7 +119,9 @@ function App() {
           [err.path]: err.message
         }), {})
 
+        setButtonEnabled(true)
         setValidationErrors(errData)
+        setLoading(false)
       }
     }
   }
@@ -190,7 +192,7 @@ function App() {
         
         <SubmitButton 
           loading={loading} 
-          enabled={enabled} 
+          enabled={buttonEnabled} 
           successMessage={successMessage} 
         />
       </form>
