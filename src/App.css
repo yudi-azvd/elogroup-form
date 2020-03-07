@@ -145,12 +145,13 @@ div.social-media-options {
   transition: 
     opacity 1s,
     position 1s,
-    transform 1s,
+    transform .7s,
     top 3s;
 }
 
 div.social-media-options.show {
   opacity: 1;
+  z-index: 1;
   /* position: relative; */
   transform: translateY(0px);
 }
