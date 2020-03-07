@@ -169,24 +169,19 @@ function App() {
               </div>
             </div>
           </div>
-              
+
           <div className={`social-media-options ${hasSocialMedia === 'yes' ? 'show' : 'hide'}`}>
-            { hasSocialMedia === 'yes' ? 
-            <div>
-              {Object.keys(socialMedia).map(socialMediaName => (
-                <Checkbox 
-                  key={socialMediaName} 
-                  label={socialMediaName} 
+            {Object
+              .keys(socialMedia)
+              .map(socialMediaKey => (
+                <Checkbox
+                  key={socialMediaKey} 
+                  label={socialMediaKey} 
                   onChange={handleSocialMediaChange} 
-                  checked={socialMedia[socialMediaName]} 
+                  checked={socialMedia[socialMediaKey]} 
                 />
-                ))}
-              </div>
-            :
-            <div className="no-social-media">
-              {/* <span>Não tenho redes sociais</span> */}
-            </div> 
-            }
+              )
+            )}
           </div>
         </div>
         
