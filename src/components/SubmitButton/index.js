@@ -2,7 +2,7 @@ import React from 'react';
 
 import './styles.css'
 
-export default function SubmitButton({enabled, loading, successMessage, pushedDown}) {
+export default function SubmitButton({enabled, loading, successMessage}) {
   return (
     <>
       <button 
