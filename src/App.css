@@ -139,12 +139,10 @@ span.has-social-media-question {
 
 div.social-media-options {
   z-index: -1;
-  /* position: absolute; */
-  transform: translateY(-20px);
+  transform: translateY(-5px);
 
   transition: 
     opacity 1s,
-    position 1s,
     transform .7s,
     top 3s;
 }
@@ -152,14 +150,14 @@ div.social-media-options {
 div.social-media-options.show {
   opacity: 1;
   z-index: 1;
-  /* position: relative; */
+  position: relative;
   transform: translateY(0px);
 }
 
 div.social-media-options.hide {
   opacity: 0;
-  /* position: absolute; */
-  transform: translateY(-20px);
+  position: absolute;
+  transform: translateY(-5px);
 
 }
 

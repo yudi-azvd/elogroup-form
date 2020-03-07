@@ -186,6 +186,7 @@ function App() {
         </div>
         
         <SubmitButton 
+          pushedDown={hasSocialMedia === 'yes'}
           loading={loading} 
           enabled={buttonEnabled} 
           successMessage={successMessage} 

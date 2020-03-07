@@ -1,16 +1,16 @@
-div.content form button.disabled {
+button.disabled {
   opacity: 0.5;
   cursor: not-allowed;
   transition: all .2;
 }
 
-div.content form button.loading {
+button.loading {
   opacity: 0.5;
   cursor: progress;
   transition: all .2;
 }
 
-div.content form span.success-message {
+span.success-message {
   color: green;
   font-weight: bold;
   text-align: center;
