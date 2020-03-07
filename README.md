@@ -34,8 +34,4 @@ Para testar localmente a requisição que é enviada pelo formulário, você pod
 nesse [repositório](https://github.com/yudi-azvd/elogroup-form-backend).
 
 ### A fazer
-
-* Refatorar estrutura (colocar páginas?)
-* Colocar animação Spin no botão enquanto estiver carregando ? (faz muita diferença no mobile)
-* Estilizar checkbox e radio?
-* Melhorar aparecimento das redes sociais
+Dê uma olhada [aqui](https://github.com/yudi-azvd/elogroup-form/issues/1).
