@@ -1,0 +1,21 @@
+div.content form button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transition: all .2;
+}
+
+div.content form button.loading {
+  opacity: 0.5;
+  cursor: progress;
+  transition: all .2;
+}
+
+div.content form span.success-message {
+  color: green;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: -10px;
+
+  transition: all 1s;
+}
