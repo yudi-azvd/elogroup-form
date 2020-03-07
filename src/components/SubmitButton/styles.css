@@ -9,6 +9,8 @@ button#submit {
   
   background: #F4A329;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+
+  transition: all .2s;
 }
 
 button#submit:hover {
@@ -21,13 +23,11 @@ button#submit:hover {
 button#submit.disabled {
   opacity: 0.5;
   cursor: not-allowed;
-  transition: all .2s;
 }
 
 button#submit.loading {
   opacity: 0.5;
   cursor: progress;
-  transition: all .2s;
 }
 
 span#success-message {
