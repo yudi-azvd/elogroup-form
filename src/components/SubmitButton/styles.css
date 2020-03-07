@@ -1,10 +1,10 @@
-button.disabled {
+button#submit.disabled {
   opacity: 0.5;
   cursor: not-allowed;
   transition: all .2;
 }
 
-button.loading {
+button#submit.loading {
   opacity: 0.5;
   cursor: progress;
   transition: all .2;
