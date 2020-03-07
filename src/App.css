@@ -85,26 +85,6 @@ div.content form hr {
   margin-bottom: 16px;
 }
 
-div.content form button {
-  height: 42px;
-  
-  font-weight: bold;
-  color: #fff;
-  
-  border: 0;
-  border-radius: 4px;
-  
-  background: #F4A329;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
-}
-
-div.content form button:hover {
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
-  background: #f39f20;
-
-  transition: all .2s;
-}
-
 div.question {
   display: flex;
   align-items: center;

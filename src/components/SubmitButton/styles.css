@@ -1,13 +1,33 @@
+button#submit {
+  height: 42px;
+  
+  font-weight: bold;
+  color: #fff;
+  
+  border: 0;
+  border-radius: 4px;
+  
+  background: #F4A329;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+button#submit:hover {
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+  background: #f39f20;
+
+  transition: all .2s;
+}
+
 button#submit.disabled {
   opacity: 0.5;
   cursor: not-allowed;
-  transition: all .2;
+  transition: all .2s;
 }
 
 button#submit.loading {
   opacity: 0.5;
   cursor: progress;
-  transition: all .2;
+  transition: all .2s;
 }
 
 span#success-message {
