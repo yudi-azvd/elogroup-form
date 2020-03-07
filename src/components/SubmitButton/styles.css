@@ -10,7 +10,7 @@ button#submit.loading {
   transition: all .2;
 }
 
-span.success-message {
+span#success-message {
   color: green;
   font-weight: bold;
   text-align: center;

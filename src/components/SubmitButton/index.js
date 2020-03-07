@@ -12,7 +12,7 @@ export default function SubmitButton({enabled, loading, successMessage}) {
       >
         ENVIAR
       </button>
-      {successMessage && <span className="success-message"> {successMessage} </span>}
+      {successMessage && <span id="success-message"> {successMessage} </span>}
     </>
   );
 }
