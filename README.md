@@ -1,5 +1,5 @@
 # Formulário EloGroup
-Esse formulário foi desenvolvido com [React](https://reactjs.org/) para a interface. Por mais que seja apenas uma página, escolhi implementar esse formulário usando React porque é o framework que estou estudando atualmente.
+Esse formulário foi desenvolvido com [React](https://reactjs.org/) para a interface. Por mais que seja apenas uma página, escolhi implementar esse formulário usando React porque é o framework que estou estudando atualmente e quero colocar esses conhecimentos em prática.
 
 Outras bibliotecas usadas:
 * [Yup](https://github.com/jquense/yup#yup) para validação dos campos.
