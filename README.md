@@ -1,14 +1,18 @@
 # Formulário EloGroup
-_Ainda em desenvolvimento._
-
-Esse formulário foi desenvolvido com [React](https://reactjs.org/) para a interface.
+Esse formulário foi desenvolvido com [React](https://reactjs.org/) para a interface. Por mais que seja apenas uma página, escolhi implementar esse formulário usando React porque é o framework que estou estudando atualmente.
 
 Outras bibliotecas usadas:
-* [Yup](https://github.com/jquense/yup#yup) para validação.
+* [Yup](https://github.com/jquense/yup#yup) para validação dos campos.
 * [Axios](https://github.com/axios/axios#axios) para comunicação com o backend.
 
-### Dê uma olhada
 
+
+### Estrutura de arquivos
+...
+
+
+
+### Dê uma olhada
 Você vai precisar do [Node.js](https://nodejs.org/en/) e [npm](https://www.npmjs.com/get-npm) instalados em seu computador.
 
 ```sh
@@ -19,19 +23,26 @@ npm install
 npm run start
 ```
 
+
+
 ### Ou ainda
 Se, por acaso, a instalação dos pacotes demorar muito, você pode checar o funcionamento [aqui](https://elogroup-form.netlify.com/). O primeiro envio pode demorar até 40 segundos porque o backend está hospedado em um servidor grátis da Heroku.
 
-### Está mais ou menos assim
 
+
+### Está mais ou menos assim
 <div style="margin: 0 auto;">
   <img  src="./.github/elogroup-form-screenshot.png" 
   width="800px">
 </div>
 
+
+
 ### Requisição POST
 Para testar localmente a requisição que é enviada pelo formulário, você pode usar o modelo encontrado
 nesse [repositório](https://github.com/yudi-azvd/elogroup-form-backend).
+
+
 
 ### A fazer
 Dê uma olhada [aqui](https://github.com/yudi-azvd/elogroup-form/issues/1).
