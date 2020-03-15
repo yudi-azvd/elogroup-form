@@ -68,6 +68,8 @@ Se, por acaso, a instalação dos pacotes demorar muito, você pode checar o fun
         └── api.js
 ```
 
+### Nome na plataforma Gupy
+Sinceramente, não entendi muito essa parte. No meu perfil na pllataforma diz que é **Yudi Yamane**.
 
 
 ### Requisição POST
